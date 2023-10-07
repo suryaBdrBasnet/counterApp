@@ -33,6 +33,8 @@ startButton.addEventListener('click', () => {
 });
 
 stopButton.addEventListener('click', () => {
+    if(!intervalId) return;
+
     pausedTime = Date.now() - startTime;
     clearInterval(intervalId);
     intervalId = null;
